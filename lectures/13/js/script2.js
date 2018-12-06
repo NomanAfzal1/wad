@@ -30,7 +30,6 @@ function displayNext() {
 
     if(currentQuestion >= questions.length) {
         resetQuiz();
-        document.getElementById("next-btn").innerHTML = "Next question";
         document.getElementById("choice-list").innerHTML = "";
         displayCurrentQuestion();
         return;
@@ -40,7 +39,7 @@ function displayNext() {
     var radios = document.querySelector("input[name='answer']:checked");
     myAnswer = radios.value;
     
-    if(document.querySelector("input[name='answer']:checked")) {
+    if(myAnswer == -1) {
         var msg = document.getElementById("quiz-message");
         msg.style.display = 'block';
         msg.innerHTML = "Selection Required!!";
@@ -70,12 +69,12 @@ function displayNext() {
 
 }
 
-function displayCurrentQuestion() {
+function displayCurrentQuestion()
+{
     var elm = document.getElementById("question");
     elm.innerHTML = questions[currentQuestion].question;
-
     var ulElm = document.getElementById("choice-list");
-    for (var i = 0; i < questions[currentQuestion].choices.length; i++) {
+    for(var i = 0; i < questions[currentQuestion].choices.length; i++) {
         var liElm = document.createElement("li");
         liElm.innerHTML = "<input id='myradio' type='radio' name='answer' value='"+i+"'>" + questions[currentQuestion].choices[i];
         ulElm.appendChild(liElm);
