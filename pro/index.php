@@ -1,7 +1,11 @@
-<!DOCTYPE html>
 <?php
-require "server/functions.php";
+    require "function.php";
+
+    require "db_connection.php";  
 ?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +22,7 @@ require "server/functions.php";
     <div class="row">
         <div class="col-12 no-padding">
             <nav class="navbar navbar-light bg-light navbar-expand-sm fixed-top">
-                <a class="navbar-brand" href="index.php"><img src="media/logo.png" width="175" height="50" alt="logo">
+                <a class="navbar-brand" href="index.html"><img src="media/logo.png" width="175" height="50" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button"
                         data-toggle="collapse"
@@ -33,7 +37,7 @@ require "server/functions.php";
                                        id="search-bar" name="search"
                                        placeholder="Find Mobile Phones, Laptops, and more..">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary btn-lg" type="submit"><i class="fas fa-search"></i></button>
+                                    <button class="btn btn-outline-secondary btn-lg" type="button"><i class="fas fa-search"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -67,7 +71,10 @@ require "server/functions.php";
                     Categories
                 </a>
                 <ul class="collapse show list-unstyled" id="homeSubmenu">
-                    <?php getCats(); ?>
+                    
+                   <?php
+                        getCats();
+                   ?>
                 </ul>
             </li>
             <li class="active">
@@ -75,8 +82,10 @@ require "server/functions.php";
                     <i class="fas fa-briefcase"></i>
                     Brands
                 </a>
-                <ul class="collapse show list-unstyled" id="pageSubmenu">
-                    <?php getBrands(); ?>
+                <ul class="collapse show list-unstyled" id="pageSubmenu">  
+                 <?php
+                        getBrands();
+                   ?>
                 </ul>
             </li>
             <li>
@@ -96,7 +105,11 @@ require "server/functions.php";
     <article id="content" class="container-fluid bg-white">
 
         <div class="row">
-                <?php getPro(); ?>
+            <div class="col">
+            <?php
+                        getData();
+                   ?>
+            </div>
         </div>
     </article>
 
