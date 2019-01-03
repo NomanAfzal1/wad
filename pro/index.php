@@ -106,7 +106,9 @@
 
         <div class="row">
             <div class="col">
-                Content
+            <?php
+                        getData();
+                   ?>
             </div>
         </div>
     </article>

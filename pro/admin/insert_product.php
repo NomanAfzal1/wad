@@ -1,6 +1,27 @@
 <?php  
     require "../function.php";
+
+    if(isset($_POST['insert_product']))
+    {
+        $pro_title = $_POST['pro_title'];
+        $pro_cat = $_POST['pro_cat'];
+        $pro_brand = $_POST['pro_brand'];
+        $pro_price = $_POST['pro_price'];
+        $pro_desc = $_POST['pro_desc'];
+        $pro_keywords = $_POST['pro_kw'];
+       
+        $insertQuery = "insert into products (pro_title,pro_cat,pro_brand,pro_price,pro_desc,pro_keywords)
+        values ('$pro_title','$pro_cat','$pro_brand','$pro_price','$pro_desc','$pro_keywords');";
+
+        $result = mysqli_query($con,$insertQuery);
+
+        if(!$result)
+        {
+            echo "Not Executed";
+        }
+    }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +41,7 @@
 <body>
 <div class="container">
     <h1 class="text-center my-4"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Product </h1>
-    <form>
+    <form action = "" method="post">
         <div class="row">
             <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-2 col-xl-2 mt-auto">
                 <label for="pro_title" class="float-md-right"> <span class="d-sm-none d-md-inline"> Product </span> Title:</label>
@@ -117,7 +138,7 @@
         <div class="row my-3">
             <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-2 col-xl-2 mt-auto"></div>
             <div class="col-sm-9 col-md-8 col-lg-4 col-xl-4">
-                <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Insert Now </button>
+                <button type="submit" name= "insert_product" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Insert Now </button>
             </div>
         </div>
     </form>
