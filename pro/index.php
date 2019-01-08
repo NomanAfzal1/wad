@@ -1,11 +1,7 @@
-<?php
-    require "function.php";
-
-    require "db_connection.php";  
-?>
-
-
 <!DOCTYPE html>
+<?php
+require "server/functions.php";
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -71,10 +67,7 @@
                     Categories
                 </a>
                 <ul class="collapse show list-unstyled" id="homeSubmenu">
-                    
-                   <?php
-                        getCats();
-                   ?>
+                    <?php getCats(); ?>
                 </ul>
             </li>
             <li class="active">
@@ -82,10 +75,8 @@
                     <i class="fas fa-briefcase"></i>
                     Brands
                 </a>
-                <ul class="collapse show list-unstyled" id="pageSubmenu">  
-                 <?php
-                        getBrands();
-                   ?>
+                <ul class="collapse show list-unstyled" id="pageSubmenu">
+                    <?php getBrands(); ?>
                 </ul>
             </li>
             <li>
@@ -105,11 +96,7 @@
     <article id="content" class="container-fluid bg-white">
 
         <div class="row">
-            <div class="col">
-            <?php
-                        getData();
-                   ?>
-            </div>
+                <?php getPro(); ?>
         </div>
     </article>
 
