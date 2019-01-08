@@ -1,7 +1,7 @@
 <?php
 require_once "db_connection.php";
-if(isset($_GET['insert_bra'])){
-    $bra_title = $_GET['bra_title'];
+if(isset($_POST['insert_bra'])){
+    $bra_title = $_POST['bra_title'];
 
     $insert_brand = "insert into brands (brand_title) 
                   VALUES ('$bra_title');";
@@ -26,7 +26,7 @@ if(isset($_GET['insert_bra'])){
 <body>
 <div class="container">
     <h1 class="text-center my-4"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Brand </h1>
-    <form action="insert_brand.php" method="GET" enctype="multipart/form-data">
+    <form action="insert_brand.php" method="POST" enctype="multipart/form-data">
         <div class="row">
             <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-2 col-xl-2 mt-auto">
                 <label for="bra_title" class="float-md-right"> <span class="d-sm-none d-md-inline"> Brand </span> Title:</label>
