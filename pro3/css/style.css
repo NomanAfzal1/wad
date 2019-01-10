@@ -241,3 +241,7 @@ a.article:hover {
 input[name='c_name']:invalid {
     background-color: red;
 }
+
+input[name='c_password']:invalid {
+    background-color: red;
+}
